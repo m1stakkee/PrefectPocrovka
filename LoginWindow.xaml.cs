@@ -16,8 +16,7 @@ namespace WpfApp2
 {
     public partial class LoginWindow : Window
     {
-        private const string correctUsername = "user"; 
-        private const string correctPassword = "password"; 
+        
 
         public LoginWindow()
         {
