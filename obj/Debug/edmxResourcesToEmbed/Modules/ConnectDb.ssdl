@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище prefect_pocrovskoe_streshnegoModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Appointments">
+    <Key>
+      <PropertyRef Name="AppointmentId" />
+    </Key>
+    <Property Name="AppointmentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="AppointmentDate" Type="datetime" Nullable="false" />
+    <Property Name="DepartmentId" Type="int" />
+    <Property Name="PrefectId" Type="int" />
+    <Property Name="Reason" Type="nvarchar" MaxLength="255" />
+    <Property Name="StatusId" Type="int" Nullable="false" />
+    <Property Name="CancellationReasonId" Type="int" />
+    <Property Name="CreatedAt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CancellationReasons">
+    <Key>
+      <PropertyRef Name="CancellationReasonId" />
+    </Key>
+    <Property Name="CancellationReasonId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Reason" Type="nvarchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Departments">
+    <Key>
+      <PropertyRef Name="DepartmentId" />
+    </Key>
+    <Property Name="DepartmentId" Type="int" Nullable="false" />
+    <Property Name="DepartmnetName" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreatedAt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Prefects">
+    <Key>
+      <PropertyRef Name="PrefectId" />
+    </Key>
+    <Property Name="PrefectId" Type="int" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+    <Property Name="SurName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Statuses">
+    <Key>
+      <PropertyRef Name="StatusId" />
+    </Key>
+    <Property Name="StatusId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StatusName" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FurstName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="SurName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="Login" Type="nvarchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedAt" Type="datetime" />
+  </EntityType>
+  <Association Name="FK__Appointme__Cance__778AC167">
+    <End Role="CancellationReasons" Type="Self.CancellationReasons" Multiplicity="0..1" />
+    <End Role="Appointments" Type="Self.Appointments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CancellationReasons">
+        <PropertyRef Name="CancellationReasonId" />
+      </Principal>
+      <Dependent Role="Appointments">
+        <PropertyRef Name="CancellationReasonId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Appointme__Statu__76969D2E">
+    <End Role="Statuses" Type="Self.Statuses" Multiplicity="1" />
+    <End Role="Appointments" Type="Self.Appointments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Statuses">
+        <PropertyRef Name="StatusId" />
+      </Principal>
+      <Dependent Role="Appointments">
+        <PropertyRef Name="StatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Appointme__UserI__75A278F5">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Appointments" Type="Self.Appointments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Appointments">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Appointments_Departments">
+    <End Role="Departments" Type="Self.Departments" Multiplicity="0..1" />
+    <End Role="Appointments" Type="Self.Appointments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departments">
+        <PropertyRef Name="DepartmentId" />
+      </Principal>
+      <Dependent Role="Appointments">
+        <PropertyRef Name="DepartmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Appointments_Prefects">
+    <End Role="Prefects" Type="Self.Prefects" Multiplicity="0..1" />
+    <End Role="Appointments" Type="Self.Appointments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Prefects">
+        <PropertyRef Name="PrefectId" />
+      </Principal>
+      <Dependent Role="Appointments">
+        <PropertyRef Name="PrefectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище prefect_pocrovskoe_streshnegoModelContainer">
+    <EntitySet Name="Appointments" EntityType="Self.Appointments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CancellationReasons" EntityType="Self.CancellationReasons" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Departments" EntityType="Self.Departments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Prefects" EntityType="Self.Prefects" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Statuses" EntityType="Self.Statuses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Appointme__Cance__778AC167" Association="Self.FK__Appointme__Cance__778AC167">
+      <End Role="CancellationReasons" EntitySet="CancellationReasons" />
+      <End Role="Appointments" EntitySet="Appointments" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Appointme__Statu__76969D2E" Association="Self.FK__Appointme__Statu__76969D2E">
+      <End Role="Statuses" EntitySet="Statuses" />
+      <End Role="Appointments" EntitySet="Appointments" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Appointme__UserI__75A278F5" Association="Self.FK__Appointme__UserI__75A278F5">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Appointments" EntitySet="Appointments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Appointments_Departments" Association="Self.FK_Appointments_Departments">
+      <End Role="Departments" EntitySet="Departments" />
+      <End Role="Appointments" EntitySet="Appointments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Appointments_Prefects" Association="Self.FK_Appointments_Prefects">
+      <End Role="Prefects" EntitySet="Prefects" />
+      <End Role="Appointments" EntitySet="Appointments" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
