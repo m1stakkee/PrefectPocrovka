@@ -6,7 +6,7 @@
         MinWidth="401"
         Height="250"
         Width="401">
-    <Grid Margin="10">
+    <Grid Margin="11">
         <Label Content="Имя пользователя:" HorizontalAlignment="Center" VerticalAlignment="Top"/>
         <TextBox x:Name="UsernameTextBox" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,30,0,0"/>
 
