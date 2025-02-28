@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Modules"
   ],
-  "SelectedNode": "\\LoginWindow.xaml",
+  "SelectedNode": "\\Modules\\ConnectDb.cs",
   "PreviewInSolutionExplorer": false
 }

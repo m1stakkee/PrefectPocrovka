@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -11,23 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient; // Или другой провайдер базы данных
-
 
 namespace WpfApp2
 {
-    public partial class MainWindow : Window
+    /// <summary>
+    /// Логика взаимодействия для AdminMainPage.xaml
+    /// </summary>
+    public partial class AdminMainPage : Page
     {
-        public MainWindow()
+        public AdminMainPage()
         {
             InitializeComponent();
-            MainFrame.Navigate(new MainPage());
-
         }
-       
     }
 }
