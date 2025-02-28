@@ -45,7 +45,7 @@ namespace WpfApp2
             }
             catch
             {
-                
+                // ignored
             }
         }
     }
