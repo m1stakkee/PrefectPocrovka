@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PrefectPocrovka;
 using WpfApp2.Modules;
 
-namespace  WpfApp2
+namespace  PrefectPocrovka
 {
     internal class ConnectDb
     {
