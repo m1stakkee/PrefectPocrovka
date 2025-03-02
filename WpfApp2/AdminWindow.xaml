@@ -6,9 +6,9 @@
         xmlns:local="clr-namespace:WpfApp2"
         mc:Ignorable="d"
         Title="AdminWindow" 
-        MinHeight="450" 
+        MinHeight="500" 
         MinWidth="700"
-        MaxHeight="500"
+        MaxHeight="550"
         MaxWidth="750">
     <Grid>
 
@@ -93,7 +93,16 @@
                />
         </GroupBox>
 
-        <GroupBox
+
+        <GroupBox 
+            Header="Login"
+            Margin="0 10 0 0 ">
+        <TextBox
+            Name="TxbLogin"
+                        />
+        </GroupBox>
+
+            <GroupBox
             Header="Phone"
             Margin="0 10 0 0 ">
         <TextBox
@@ -127,6 +136,9 @@
         <PasswordBox
             Name="PsbPasswordRepeat"/>
         </GroupBox>
+            
+        
+          
 
 
         </StackPanel>
