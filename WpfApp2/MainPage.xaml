@@ -1,22 +1,70 @@
 ﻿<Page x:Class="WpfApp2.MainPage"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Запись на прием к префекту" MinHeight="350" MinWidth="401">
-    <Grid Background="White" 
-        Margin="10">
-        <Label Content="Выберите тип приема:" HorizontalAlignment="Left" VerticalAlignment="Top" />
-        <ComboBox x:Name="AppointmentTypeComboBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,30,0,0">
-            <ComboBoxItem Content="Личный прием" />
-            <ComboBoxItem Content="Онлайн-консультация" />
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp2"
+      mc:Ignorable="d" 
+      MinHeight="450"
+      MinWidth="500"
+      MaxHeight="500"
+      MaxWidth="550"
+      Title="Запись к префекту">
+
+    <Grid 
+        Margin="10"
+        Background="White">
+        
+        <Label 
+            Content="Выберите тип приема:" 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Top" />
+        <ComboBox 
+            x:Name="AppointmentTypeComboBox" 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Top" 
+            Margin="0,30,0,0">
+            <ComboBoxItem 
+                Content="Личный прием" />
+            <ComboBoxItem 
+                Content="Онлайн-консультация" />
         </ComboBox>
+        
 
-        <Label Content="Выберите дату:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,70,0,0"/>
-        <DatePicker x:Name="AppointmentDatePicker" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,100,0,0"/>
+        <Label 
+            Content="Выберите дату:" 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Top" 
+            Margin="0,70,0,0"/>
+        <DatePicker 
+            x:Name="AppointmentDatePicker" 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Top" 
+            Margin="0,100,0,0"/>
 
-        <Label Content="Введите ваши данные:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,140,0,0"/>
-        <TextBox x:Name="UserDataTextBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,170,0,0" Width="300"/>
+        <Label 
+            Content="Введите ваши данные:" 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Top" 
+            Margin="0,140,0,0"/>
+        <TextBox 
+            x:Name="UserDataTextBox" 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Top" 
+            Margin="0,170,0,0" 
+            Width="300"/>
 
-        <Button Content="Записаться" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,210,0,0" Click="ScheduleAppointment_Click"/>
-        <TextBlock x:Name="ResultTextBlock" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,250,0,0" Foreground="Green"/>
+        <Button 
+            Content="Записаться" 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Top" 
+            Margin="0,210,0,0" 
+            Click="ScheduleAppointment_Click"/>
+        <TextBlock 
+            x:Name="ResultTextBlock" 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Top" 
+            Margin="0,250,0,0" 
+            Foreground="Green"/>
     </Grid>
 </Page>

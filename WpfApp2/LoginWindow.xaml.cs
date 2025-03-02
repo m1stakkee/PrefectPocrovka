@@ -11,12 +11,13 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfApp2.Models;
 
 namespace WpfApp2
 {
     public partial class LoginWindow : Window
     {
-        
+
 
         public LoginWindow()
         {
@@ -26,15 +27,15 @@ namespace WpfApp2
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
             try
-            {   
+            {
                 var data = ConnectDb.Connect.Users.FirstOrDefault(
-                    x => x.Login == UsernameTextBox.Text && x.Password==PasswordBox.Password);
+                    x => x.Login == UsernameTextBox.Text && x.Password == PasswordBox.Password);
 
                 if (data != null)
                 {
-                    MainWindow mainWindow = new MainWindow(); 
-                    mainWindow.Show(); 
-                    this.Close(); 
+                    MainWindow mainWindow = new MainWindow();
+                    mainWindow.Show();
+                    this.Close();
                 }
                 else
                 {
@@ -44,8 +45,10 @@ namespace WpfApp2
             }
             catch
             {
-                
+
             }
         }
+
+        
     }
 }

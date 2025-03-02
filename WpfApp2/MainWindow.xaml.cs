@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient; // Или другой провайдер базы данных
+using System.Data.SqlClient; 
 
 
 namespace WpfApp2

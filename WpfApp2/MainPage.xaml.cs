@@ -37,11 +37,11 @@ namespace WpfApp2
                 return;
             }
 
-            
+
 
             ResultTextBlock.Text = $"Запись на {appointmentType} успешно создана на {appointmentDate.Value.ToShortDateString()} для {userData}.";
         }
 
-        
+
     }
 }

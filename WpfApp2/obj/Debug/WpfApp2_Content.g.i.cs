@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("modules/connectdb.context.tt")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("modules/connectdb.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("models/database1.mdf")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("models/database1_log.ldf")]
 
 
