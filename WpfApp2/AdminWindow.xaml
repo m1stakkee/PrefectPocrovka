@@ -5,58 +5,150 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp2"
         mc:Ignorable="d"
-        Title="AdminWindow" Height="450" Width="800">
+        Title="AdminWindow" 
+        MinHeight="450" 
+        MinWidth="700"
+        MaxHeight="500"
+        MaxWidth="750">
     <Grid>
 
-        
+        <StackPanel 
+            HorizontalAlignment="Left" 
+            Width="500">
             <DataGrid 
-            x:Name="AdminWin" 
-            AutoGenerateColumns="False" 
-            Margin="0,0,0,-80" 
-            SelectionChanged="dataGrid_SelectionChanged">
+                x:Name="AdminWin" 
+                AutoGenerateColumns="False" 
+                Margin="0,0,0,-80" 
+                SelectionChanged="dataGrid_SelectionChanged"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top">
+
+                <StackPanel>
+
+                </StackPanel>
+                <DataGrid.Columns>
+
+                    <DataGridTextColumn 
+                        Header="ID" 
+                        Binding="{Binding Id}" 
+                        Width="1"/>
+                    <DataGridTextColumn 
+                        Header="Login" 
+                        Binding="{Binding Login}" 
+                        Width="*"/>
+                    <DataGridTextColumn
+                        Header="Phone" 
+                        Binding="{Binding Phone}" 
+                        Width="*"/>
+                    <DataGridTextColumn
+                        Header="FurstName"
+                        Binding="{Binding FurstName}"
+                        Width="*"/>
+                    <DataGridTextColumn
+                        Header="SurName"
+                        Binding="{Binding SurName}"
+                        Width="*"/>
+                    <DataGridTextColumn
+                        Header="LastName"
+                        Binding="{Binding LastName}"
+                        Width="*"/>
+                    <DataGridTextColumn
+                        Header="Role"
+                        Binding="{Binding Name}"
+                        Width="*"/>
+
+
+
+                </DataGrid.Columns>
+
+            </DataGrid>
+        </StackPanel>
             
+        <StackPanel 
+            VerticalAlignment="Top"
+            HorizontalAlignment="Right"
+            MinHeight="300"
+            MinWidth="200">
+        <GroupBox 
+           Header="FurstName"
+            Margin="0 10 0 0 ">
+        <TextBox
+            Name="TxbFurstName"
+            />
+        </GroupBox>
+
+        <GroupBox 
+            Header="SurName"
+            Margin="0 10 0 0 ">
+        <TextBox
+            Name="TxbSurName"
+               />
+        </GroupBox>
+
+        <GroupBox 
+            Header="LastName"
+            Margin="0 10 0 0 ">
+        <TextBox
+            Name="TxbLastName"
+               />
+        </GroupBox>
+
+        <GroupBox
+            Header="Phone"
+            Margin="0 10 0 0 ">
+        <TextBox
+            Name="TxbPhone"
+               />
+        </GroupBox>
+
+        <GroupBox 
+            Header="Role">
+        <ComboBox 
+            Name="CmbRole"
+            Margin="0 10 0 0 "
+            DisplayMemberPath="Name"
+            SelectedValuePath="Roleid"
             
-            <DataGrid.Columns>
-                <DataGridTextColumn 
-                    Header="ID" 
-                    Binding="{Binding Id}" />
-                <DataGridTextColumn 
-                    Header="Login" 
-                    Binding="{Binding Login}" />
-                <DataGridTextColumn
-                    Header="Phone" 
-                    Binding="{Binding Phone}" />
-                <DataGridTextColumn
-                    Header="FurstName"
-                    Binding="{Binding FurstName}"/>
-                <DataGridTextColumn
-                    Header="SurName"
-                    Binding="{Binding SurName}"/>
-                <DataGridTextColumn
-                    Header="LastName"
-                    Binding="{Binding LastName}"/>
+                />
+        </GroupBox>
+
+
+        <GroupBox 
+            Header="Password"
+            Margin="0 10 0 0 ">
+        <PasswordBox
+            Name="PsbPassword"/>
                 
-                
-                <DataGridTemplateColumn 
-                    Header="Действия">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <StackPanel 
-                                Orientation="Horizontal">
-                                <Button 
-                                    Content="Редактировать" 
-                                    Click="EditButton_Click" />
-                                <Button 
-                                    Content="Удалить" 
-                                    Click="DeleteButton_Click" />
-                                <Button
-                                    Content="Добавить"
-                                    Click="AddButton_Clicl"/>
-                            </StackPanel>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-            </DataGrid.Columns>
-        </DataGrid>
+        </GroupBox>
+
+        <GroupBox 
+            Header="Repeat Password"
+            Margin="0 10 0 0 ">
+        <PasswordBox
+            Name="PsbPasswordRepeat"/>
+        </GroupBox>
+
+
+        </StackPanel>
+
+        <StackPanel 
+            VerticalAlignment="Bottom"
+            HorizontalAlignment="Right"
+            Width="200"
+            Margin="0 0 0 10" >
+
+        <Button
+            x:Name="BtnAdd"
+            Content="Добавить"
+            Click="BtnAdd_Click" 
+            Height="30"
+            />
+        <Button
+            x:Name="BtnDelete"
+            Content="Удалить"
+            Click="BtnDelete_Click"
+            Height="30"
+        />
+        </StackPanel>
     </Grid>
 </Window>
