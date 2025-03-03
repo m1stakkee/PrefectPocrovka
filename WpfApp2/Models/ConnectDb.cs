@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace WpfApp2.Models
 {
-    internal class ConnectDb
+    public class ConnectDb
     {
-        public static prefect_pocrovskoe_streshnegoDataSet Connect { get; set; } = new prefect_pocrovskoe_streshnegoDataSet();
+        public static prefect_pocrovskoe_streshnegoDataSet Connect {  get; set; } = new prefect_pocrovskoe_streshnegoDataSet();
     }
 }

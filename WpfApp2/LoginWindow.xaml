@@ -32,17 +32,19 @@
             x:Name="UsernameTextBox" 
             HorizontalAlignment="Center" 
             VerticalAlignment="Center" 
+            Width="100"
             Margin="0,40,0,0"/>
 
         <Label 
             Content="Введите пароль" 
             HorizontalAlignment="Center" 
-            VerticalAlignment="Center" 
+            VerticalAlignment="Center"
             Margin="0,70,0,0"/>
         <PasswordBox 
-            x:Name="PasswordBox" 
+            x:Name="PsbPass" 
             HorizontalAlignment="Center" 
             VerticalAlignment="Center" 
+            Width="100"
             Margin="0,110,0,0"/>
 
         <Button 

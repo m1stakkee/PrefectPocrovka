@@ -29,7 +29,7 @@ namespace WpfApp2
             try
             {
                 var data = ConnectDb.Connect.Users.FirstOrDefault(
-                    x => x.Login == UsernameTextBox.Text && x.Password == PasswordBox.Password);
+                    x => x.Login == UsernameTextBox.Text && x.Password == PsbPass.Password);
 
                 if (data != null)
                 {

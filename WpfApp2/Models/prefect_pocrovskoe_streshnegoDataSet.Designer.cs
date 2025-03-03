@@ -6358,11 +6358,7 @@ SELECT PrefectId, FirstName, SurName, LastName, Phone, Email FROM Prefects WHERE
                 this._clearBeforeFill = value;
             }
         }
-
-        public string Login { get; internal set; }
-        public object PasswordHash { get; internal set; }
-        public object PasswordSalt { get; internal set; }
-
+        
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitAdapter() {

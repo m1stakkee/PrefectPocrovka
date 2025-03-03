@@ -224,7 +224,6 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\ConnectDb.cs" />
-    <Compile Include="Models\DbContext.cs" />
     <Compile Include="Models\prefect_pocrovskoe_streshnegoDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
