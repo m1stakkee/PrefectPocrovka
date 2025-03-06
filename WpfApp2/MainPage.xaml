@@ -44,22 +44,49 @@
             Margin="0,100,0,0"/>
 
         <Label 
-            Content="Введите ваши данные:" 
+            Content="Введите Фамилию:" 
             HorizontalAlignment="Center" 
             VerticalAlignment="Top" 
             Margin="0,140,0,0"/>
         <TextBox 
-            x:Name="UserDataTextBox" 
+            x:Name="UserSurNameTextBox" 
             HorizontalAlignment="Center" 
             VerticalAlignment="Top" 
             Margin="0,170,0,0" 
-            Width="300"/>
+            Width="150"/>
+
+        <Label 
+            Content="Введите Имя:" 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Top" 
+            Margin="0,190,0,0"/>
+        <TextBox 
+            x:Name="UserFurstNameTextBox" 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Top" 
+            Margin="0,220,0,0" 
+            Width="150"/>
+
+
+        <Label
+            Content="Введите Отчество"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Margin="0 240 0 0 "
+            />
+
+        <TextBox
+            x:Name="UserLastNameTextBox"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Margin="0 270 0 0"
+            Width="150"/>
 
         <Button 
             Content="Записаться" 
             HorizontalAlignment="Center" 
             VerticalAlignment="Top" 
-            Margin="0,210,0,0" 
+            Margin="0,300,0,0" 
             Click="ScheduleAppointment_Click"/>
         <TextBlock 
             x:Name="ResultTextBlock" 

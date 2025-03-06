@@ -29,17 +29,29 @@ namespace WpfApp2
         {
             var appointmentType = (AppointmentTypeComboBox.SelectedItem as ComboBoxItem)?.Content.ToString();
             var appointmentDate = AppointmentDatePicker.SelectedDate;
-            var userData = UserDataTextBox.Text;    
+            var userFurstName = UserFurstNameTextBox.Text;
+            var userSurName = UserSurNameTextBox.Text;
+            var userLastName = UserLastNameTextBox.Text;
+            
 
-            if (appointmentDate == null || string.IsNullOrEmpty(userData))
+            if (appointmentDate == null || string.IsNullOrEmpty(userFurstName))
             {
                 MessageBox.Show("Пожалуйста, заполните все поля.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 
+            if (userLastName == null || string.IsNullOrEmpty(userLastName))
+            {
+                MessageBox.Show("Пожалуйста, заполните все поля.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
 
-
-            ResultTextBlock.Text = $"Запись на {appointmentType} успешно создана на\n{appointmentDate.Value.ToShortDateString()} для {userData}.";
+            if (userLastName == null || string.IsNullOrEmpty(userSurName))
+            {
+                MessageBox.Show("Пожалуйста, заполните все поля.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            MessageBox.Show($"Запись на {appointmentType} успешно создана на\n{appointmentDate.Value.ToShortDateString()} для {userSurName} {userFurstName} {userLastName}.", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
 
