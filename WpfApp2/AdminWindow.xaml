@@ -122,10 +122,11 @@
                 <ComboBox 
             Name="CmbRole"
             Margin="0 10 0 0 "
-            DisplayMemberPath="Name"
+            DisplayMemberPath="RoleName"
             SelectedValuePath="Roleid"
             
-                />
+             />
+                
             </GroupBox>
 
 

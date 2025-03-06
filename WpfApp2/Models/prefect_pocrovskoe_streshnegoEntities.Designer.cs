@@ -10,6 +10,8 @@
 
 #pragma warning disable 1591
 
+using System;
+
 namespace WpfApp2.Models {
     
     
@@ -502,7 +504,12 @@ namespace WpfApp2.Models {
             xs.Add(dsSchema);
             return type;
         }
-        
+
+        internal void SaveChange()
+        {
+            throw new NotImplementedException();
+        }
+
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public delegate void AppointmentsRowChangeEventHandler(object sender, AppointmentsRowChangeEvent e);
         
@@ -2773,6 +2780,11 @@ namespace WpfApp2.Models {
                 }
                 xs.Add(dsSchema);
                 return type;
+            }
+
+            internal void AddUsersRow(Users user)
+            {
+                throw new NotImplementedException();
             }
         }
         

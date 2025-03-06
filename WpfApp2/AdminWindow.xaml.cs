@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Common;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfApp2.Models;
 
 
 namespace WpfApp2
@@ -26,7 +28,13 @@ namespace WpfApp2
         private DataTable _dataTable;
         private SqlConnection _sqlConnection;
         private string _connectionString = @"Data Source=IVAN\SQLEXPRESS;Initial Catalog=prefect_pocrovskoe_streshnego;Integrated Security=True;Encrypt=False"; //Строка подключения
-
+        private string _FurstName;
+        private string _SurName;
+        private string _LastName;
+        private string _Phone;
+        private string _Password;
+        private string _RepeatPassword;
+        private int  _RoleId;
         public AdminWindow()
         {
             InitializeComponent();
@@ -64,8 +72,9 @@ namespace WpfApp2
 
         private void BtnAddClick(object sender, EventArgs e)
         {
-
         }
+           
+
         private void BtnEdit_Click(object sender, RoutedEventArgs e)
         {
             try
