@@ -59,10 +59,7 @@
                         Binding="{Binding RoleName}"
                         Width="*"/>
 
-                    <DataGridTextColumn
-                        Header="RoleId"
-                        Binding="{Binding RoleId}"
-                        Width="*"/>
+                    
 
 
 

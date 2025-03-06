@@ -2782,7 +2782,12 @@ namespace WpfApp2.Models {
                 return type;
             }
 
-            internal void AddUsersRow(Users user)
+            internal void AddUsersRow(Users users)
+            {
+                throw new NotImplementedException();
+            }
+
+            internal object Include(Func<object, object> value)
             {
                 throw new NotImplementedException();
             }

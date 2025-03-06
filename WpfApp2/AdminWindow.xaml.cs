@@ -1,9 +1,12 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Cryptography.Pkcs;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -24,39 +27,41 @@ namespace WpfApp2
     /// </summary>
     public partial class AdminWindow : Window
     {
+        
         private SqlDataAdapter _dataAdapter;
         private DataTable _dataTable;
         private SqlConnection _sqlConnection;
         private string _connectionString = @"Data Source=IVAN\SQLEXPRESS;Initial Catalog=prefect_pocrovskoe_streshnego;Integrated Security=True;Encrypt=False"; //Строка подключения
-        private string _FurstName;
-        private string _SurName;
-        private string _LastName;
-        private string _Phone;
-        private string _Password;
-        private string _RepeatPassword;
-        private int  _RoleId;
+
+        public object DgUsers { get; private set; }
+
         public AdminWindow()
         {
+            
             InitializeComponent();
-            LoadData(); // Загружаем данные при открытии окна
+            LoadDataUsers(); 
+            DataContext = this;
+            
         }
 
-        private void LoadData()
+
+        private void LoadDataUsers()
         {
+            
             try
             {
                 _sqlConnection = new SqlConnection(_connectionString);
                 _sqlConnection.Open();
 
-                string query = "SELECT * FROM Users"; // Получаем все данные из Polzovateli
+                string query = "SELECT * FROM Users"; 
                 _dataAdapter = new SqlDataAdapter(query, _sqlConnection);
                 _dataTable = new DataTable();
                 _dataAdapter.Fill(_dataTable);
 
-                // Привязываем данные к DataGrid
+                
                 AdminWin.ItemsSource = _dataTable.DefaultView;
 
-                // Для поддержки добавления и удаления нужны SqlCommandBuilder
+                
                 SqlCommandBuilder commandBuilder = new SqlCommandBuilder(_dataAdapter);
                 _dataAdapter.InsertCommand = commandBuilder.GetInsertCommand();
                 _dataAdapter.UpdateCommand = commandBuilder.GetUpdateCommand();
@@ -70,19 +75,15 @@ namespace WpfApp2
             }
         }
 
-        private void BtnAddClick(object sender, EventArgs e)
-        {
-        }
-           
-
+      
         private void BtnEdit_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                if (_dataTable.GetChanges() != null) // Проверяем, были ли изменения
+                if (_dataTable.GetChanges() != null) 
                 {
                     _dataAdapter.Update(_dataTable);
-                    _dataTable.AcceptChanges(); // Принимаем изменения
+                    _dataTable.AcceptChanges(); 
                     MessageBox.Show("Изменения сохранены!", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
 
                 }
@@ -91,13 +92,13 @@ namespace WpfApp2
                     MessageBox.Show("Нет изменений для сохранения.", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
             }
-            catch (DBConcurrencyException ex) // Обрабатываем конфликты параллелизма
+            catch (DBConcurrencyException ex) 
             {
                 MessageBox.Show("Конфликт параллелизма. Данные были изменены другим пользователем.\n" + ex.Message, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
 
-                //Перезагрузка данных
+               
                 _dataTable.RejectChanges();
-                LoadData();
+                LoadDataUsers();
             }
             catch (Exception ex)
             {
@@ -106,15 +107,15 @@ namespace WpfApp2
         }
 
 
-        //Обработчик для кнопки удаления (если используете отдельную кнопку)
+        
         private void BtnDelete_Click(object sender, RoutedEventArgs e)
         {
 
-            if (AdminWin.SelectedItem != null) // Проверяем что строка выбрана.
+            if (AdminWin.SelectedItem != null) 
             {
-                // Получаем выбранную строку
+                
                 DataRowView selectedRow = (DataRowView)AdminWin.SelectedItem;
-                // Подтверждение удаления
+                
                 MessageBoxResult result = MessageBox.Show("Вы уверены, что хотите удалить выбранную запись?", "Подтверждение удаления", MessageBoxButton.YesNo, MessageBoxImage.Warning);
 
                 if (result == MessageBoxResult.Yes)
@@ -122,18 +123,18 @@ namespace WpfApp2
                     try
                     {
 
-                        selectedRow.Delete(); // Помечаем строку как удаленную
-                        _dataAdapter.Update(_dataTable); // Отправляем изменения в БД_dataTable.AcceptChanges();     // Подтверждаем изменения в DataTable
+                        selectedRow.Delete(); 
+                        _dataAdapter.Update(_dataTable);      
                         MessageBox.Show("Запись удалена.", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
 
                     }
-                    catch (DBConcurrencyException ex) // Обрабатываем конфликты параллелизма
+                    catch (DBConcurrencyException ex) 
                     {
                         MessageBox.Show("Конфликт параллелизма. Данные были изменены другим пользователем.\n" + ex.Message, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
 
-                        //Перезагрузка данных
+                        
                         _dataTable.RejectChanges();
-                        LoadData();
+                        LoadDataUsers();
                     }
                     catch (Exception ex)
                     {
@@ -147,7 +148,7 @@ namespace WpfApp2
             }
         }
 
-        //Закрытие соединения при закрытии окна.
+        
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             if (_sqlConnection != null && _sqlConnection.State == ConnectionState.Open)
@@ -158,7 +159,84 @@ namespace WpfApp2
 
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(TxbFurstName.Text) ||
+                string.IsNullOrWhiteSpace(TxbSurName.Text) ||
+                string.IsNullOrWhiteSpace(TxbLastName.Text) ||
+                string.IsNullOrWhiteSpace(TxbLogin.Text) ||
+                string.IsNullOrWhiteSpace(TxbPhone.Text) ||
+                string.IsNullOrWhiteSpace(PsbPassword.Password) ||
+                string.IsNullOrWhiteSpace(PsbPasswordRepeat.Password))
+            {
+                MessageBox.Show("Все поля должны быть заполнены.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            if (PsbPassword.Password != PsbPasswordRepeat.Password)
+            {
+                MessageBox.Show("Пароли не совпадают.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            DataRow newRow = _dataTable.NewRow();
+            newRow["FurstName"] = TxbFurstName.Text;
+            newRow["SurName"] = TxbSurName.Text;
+            newRow["LastName"] = TxbLastName.Text;
+            newRow["Login"] = TxbLogin.Text;
+            newRow["Phone"] = TxbPhone.Text;
+            newRow["Password"] = PsbPassword.Password;
+            
+
+            _dataTable.Rows.Add(newRow);
+
+            TxbFurstName.Clear();
+            TxbSurName.Clear();
+            TxbLastName.Clear();
+            TxbLogin.Clear();
+            TxbPhone.Clear();
+            PsbPassword.Clear();
+            PsbPasswordRepeat.Clear();
+
+            SaveChanges();
+
+            
 
         }
+        private void SaveChanges()
+        {
+            try
+            {
+                if (_dataTable.GetChanges() != null)
+                {
+                    SqlCommandBuilder commandBuilder = new SqlCommandBuilder(_dataAdapter); 
+                    _dataAdapter.InsertCommand = commandBuilder.GetInsertCommand();  
+                    _dataAdapter.UpdateCommand = commandBuilder.GetUpdateCommand();
+                    _dataAdapter.DeleteCommand = commandBuilder.GetDeleteCommand();
+                    _dataAdapter.Update(_dataTable);
+                    _dataTable.AcceptChanges();
+                    MessageBox.Show("Изменения сохранены!", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Нет изменений для сохранения.", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+            }
+            catch (DBConcurrencyException ex)
+            {
+                MessageBox.Show("Конфликт параллелизма. Данные были изменены другим пользователем.\n" + ex.Message, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                _dataTable.RejectChanges();
+                LoadDataUsers();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка при сохранении изменений: " + ex.Message, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+
+
+
     }
+
+   
 }
+
