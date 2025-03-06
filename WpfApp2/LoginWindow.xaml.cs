@@ -42,32 +42,65 @@ namespace WpfApp2
                     sqlConnection.Open();
 
                     
-                    string query = "SELECT COUNT(*) FROM Users WHERE Login = @login AND Password = @password";
+                    string query = @"
+                        SELECT COUNT(*), r.Name 
+                        FROM Users p
+                        JOIN Roles r ON p.RoleId = r.RoleId
+                        WHERE p.Login = @login AND p.Password = @password
+                        GROUP BY r.Name";
                     using (SqlCommand cmd = new SqlCommand(query, sqlConnection))
                     {
                         
                         cmd.Parameters.Add("@login", SqlDbType.VarChar).Value = loginUser;
                         cmd.Parameters.Add("@password", SqlDbType.VarChar).Value = passUser;
 
-                        int userCount = (int)cmd.ExecuteScalar();
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                int userCount = reader.GetInt32(0);
+                                string roleName = reader.GetString(1);
 
-                        if (userCount > 0)
-                        {
-                            MessageBox.Show("Вы вошли!");
-                            Hide();
-                            MainWindow mainWindow = new MainWindow();
-                            mainWindow.Show();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Неправильный логин или пароль!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
+                                if (userCount > 0)
+                                {
+                                    Hide();
+
+                                    if (roleName.Equals("Админ", StringComparison.OrdinalIgnoreCase))
+                                    {
+                                        
+                                        AdminWindow adminWindow = new AdminWindow();
+                                        adminWindow.Show();
+                                        MessageBox.Show("Вы вошли как администратор!", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                                    }
+                                    else if (roleName.Equals("Пользователь", StringComparison.OrdinalIgnoreCase)) 
+                                    {
+                                        
+                                        MainWindow mainWindow = new MainWindow();
+                                        mainWindow.Show();
+                                        MessageBox.Show("Вы вошли как пользователь!", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Неизвестная роль пользователя: " + roleName, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
+                                    }
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Неправильный логин или пароль!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Неправильный логин или пароль!!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning); 
+                            }
                         }
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ошибка подключения: " + ex.Message);
+                MessageBox.Show("Ошибка подключения: " + ex.Message, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
     }
