@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using WpfApp2.Models;
+using WpfApp2.Models.prefect_pocrovskoe_streshnegoEntitiesTableAdapters;
 
 namespace WpfApp2
 {
@@ -28,6 +29,7 @@ namespace WpfApp2
         {
             string loginUser = UsernameTextBox.Text.Trim(); 
             string passUser = PsbPass.Password.Trim();
+            
 
             if (string.IsNullOrEmpty(loginUser) || string.IsNullOrEmpty(passUser))
             {
@@ -43,60 +45,64 @@ namespace WpfApp2
 
 
                     string query = @"
-                    SELECT COUNT(*), p.RoleId
-                    FROM Users p
-                    WHERE p.Login = @login AND p.Password = @password
-                    GROUP BY p.RoleId";
+                SELECT COUNT(*), p.RoleId, p.FurstName
+                FROM Users p
+                WHERE p.Login = @login AND p.Password = @password
+                GROUP BY p.RoleId, p.FurstName";  
+
                     using (SqlCommand cmd = new SqlCommand(query, sqlConnection))
                     {
-
                         cmd.Parameters.Add("@login", SqlDbType.VarChar).Value = loginUser;
                         cmd.Parameters.Add("@password", SqlDbType.VarChar).Value = passUser;
 
-                        
-
-                            using (SqlDataReader reader = cmd.ExecuteReader())
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
                             {
-                                if (reader.Read())
+                                int userCount = reader.GetInt32(0);
+                                int roleId = reader.GetInt32(1);
+                                string FurstName = reader.GetString(2); 
+
+                                if (userCount > 0)
                                 {
-                                    int userCount = reader.GetInt32(0);
-                                    int roleId = reader.GetInt32(1); 
+                                    Hide();
+                                    string roleText;
 
-                                    if (userCount > 0)
+                                    if (roleId == 1) 
                                     {
-                                        Hide();
+                                        roleText = "Администратор";
+                                        AdminWindow adminWindow = new AdminWindow();
+                                        adminWindow.Show();
 
-                                        if (roleId == 1) 
-                                        {
-                                            
-                                            AdminWindow adminWindow = new AdminWindow();
-                                            adminWindow.Show();
-                                            MessageBox.Show("Вы вошли как администратор!", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
-                                        }
-                                        else if (roleId == 2) 
-                                        {
-                                            
-                                            MainWindow mainWindow = new MainWindow();
-                                            mainWindow.Show();
-                                            MessageBox.Show("Вы вошли как пользователь!", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
-                                        }
-                                        else
-                                        {
-                                            MessageBox.Show("Неизвестная роль пользователя: " + roleId, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
-                                        }
+                                    }
+                                    else if (roleId == 2) 
+                                    {
+                                        roleText = "Пользователь";
+                                        MainWindow mainWindow = new MainWindow();
+                                        mainWindow.Show();
                                     }
                                     else
                                     {
-                                        MessageBox.Show("Неправильный логин или пароль!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
+                                        MessageBox.Show("Неизвестная роль пользователя: " + roleId, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
+                                        return; 
                                     }
+
+                                    
+                                    MessageBox.Show($"Здравствуйте, {FurstName}!\nВы вошли как {roleText}.", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
+
                                 }
                                 else
                                 {
-                                    MessageBox.Show("Неправильный логин или пароль!!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
+                                    MessageBox.Show("Неправильный логин или пароль!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
                                 }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Неправильный логин или пароль!!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
                             }
                         }
                     }
+                }
                 
             }
             catch (Exception ex)
