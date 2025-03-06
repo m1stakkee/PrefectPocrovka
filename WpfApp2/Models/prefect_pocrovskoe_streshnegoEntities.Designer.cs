@@ -20,9 +20,9 @@ namespace WpfApp2.Models {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("prefect_pocrovskoe_streshnegoDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("prefect_pocrovskoe_streshnegoEntities")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class prefect_pocrovskoe_streshnegoDataSet : global::System.Data.DataSet {
+    public partial class prefect_pocrovskoe_streshnegoEntities : global::System.Data.DataSet {
         
         private AppointmentsDataTable tableAppointments;
         
@@ -54,7 +54,7 @@ namespace WpfApp2.Models {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public prefect_pocrovskoe_streshnegoDataSet() {
+        public prefect_pocrovskoe_streshnegoEntities() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -65,7 +65,7 @@ namespace WpfApp2.Models {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected prefect_pocrovskoe_streshnegoDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected prefect_pocrovskoe_streshnegoEntities(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -229,7 +229,7 @@ namespace WpfApp2.Models {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            prefect_pocrovskoe_streshnegoDataSet cln = ((prefect_pocrovskoe_streshnegoDataSet)(base.Clone()));
+            prefect_pocrovskoe_streshnegoEntities cln = ((prefect_pocrovskoe_streshnegoEntities)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -361,9 +361,9 @@ namespace WpfApp2.Models {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "prefect_pocrovskoe_streshnegoDataSet";
+            this.DataSetName = "prefect_pocrovskoe_streshnegoEntities";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/prefect_pocrovskoe_streshnegoDataSet.xsd";
+            this.Namespace = "http://tempuri.org/prefect_pocrovskoe_streshnegoEntities.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableAppointments = new AppointmentsDataTable();
@@ -459,7 +459,7 @@ namespace WpfApp2.Models {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            prefect_pocrovskoe_streshnegoDataSet ds = new prefect_pocrovskoe_streshnegoDataSet();
+            prefect_pocrovskoe_streshnegoEntities ds = new prefect_pocrovskoe_streshnegoEntities();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -858,7 +858,7 @@ namespace WpfApp2.Models {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                prefect_pocrovskoe_streshnegoDataSet ds = new prefect_pocrovskoe_streshnegoDataSet();
+                prefect_pocrovskoe_streshnegoEntities ds = new prefect_pocrovskoe_streshnegoEntities();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1136,7 +1136,7 @@ namespace WpfApp2.Models {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                prefect_pocrovskoe_streshnegoDataSet ds = new prefect_pocrovskoe_streshnegoDataSet();
+                prefect_pocrovskoe_streshnegoEntities ds = new prefect_pocrovskoe_streshnegoEntities();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1423,7 +1423,7 @@ namespace WpfApp2.Models {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                prefect_pocrovskoe_streshnegoDataSet ds = new prefect_pocrovskoe_streshnegoDataSet();
+                prefect_pocrovskoe_streshnegoEntities ds = new prefect_pocrovskoe_streshnegoEntities();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1760,7 +1760,7 @@ namespace WpfApp2.Models {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                prefect_pocrovskoe_streshnegoDataSet ds = new prefect_pocrovskoe_streshnegoDataSet();
+                prefect_pocrovskoe_streshnegoEntities ds = new prefect_pocrovskoe_streshnegoEntities();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2037,7 +2037,7 @@ namespace WpfApp2.Models {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                prefect_pocrovskoe_streshnegoDataSet ds = new prefect_pocrovskoe_streshnegoDataSet();
+                prefect_pocrovskoe_streshnegoEntities ds = new prefect_pocrovskoe_streshnegoEntities();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2315,7 +2315,7 @@ namespace WpfApp2.Models {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                prefect_pocrovskoe_streshnegoDataSet ds = new prefect_pocrovskoe_streshnegoDataSet();
+                prefect_pocrovskoe_streshnegoEntities ds = new prefect_pocrovskoe_streshnegoEntities();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2717,7 +2717,7 @@ namespace WpfApp2.Models {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                prefect_pocrovskoe_streshnegoDataSet ds = new prefect_pocrovskoe_streshnegoDataSet();
+                prefect_pocrovskoe_streshnegoEntities ds = new prefect_pocrovskoe_streshnegoEntities();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3933,7 +3933,7 @@ namespace WpfApp2.Models {
         }
     }
 }
-namespace WpfApp2.Models.prefect_pocrovskoe_streshnegoDataSetTableAdapters {
+namespace WpfApp2.Models.prefect_pocrovskoe_streshnegoEntitiesTableAdapters {
     
     
     /// <summary>
@@ -4150,7 +4150,7 @@ SELECT AppointmentId, UserId, AppointmentDate, DepartmentId, PrefectId, Reason, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(prefect_pocrovskoe_streshnegoDataSet.AppointmentsDataTable dataTable) {
+        public virtual int Fill(prefect_pocrovskoe_streshnegoEntities.AppointmentsDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -4163,9 +4163,9 @@ SELECT AppointmentId, UserId, AppointmentDate, DepartmentId, PrefectId, Reason, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual prefect_pocrovskoe_streshnegoDataSet.AppointmentsDataTable GetData() {
+        public virtual prefect_pocrovskoe_streshnegoEntities.AppointmentsDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            prefect_pocrovskoe_streshnegoDataSet.AppointmentsDataTable dataTable = new prefect_pocrovskoe_streshnegoDataSet.AppointmentsDataTable();
+            prefect_pocrovskoe_streshnegoEntities.AppointmentsDataTable dataTable = new prefect_pocrovskoe_streshnegoEntities.AppointmentsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -4173,14 +4173,14 @@ SELECT AppointmentId, UserId, AppointmentDate, DepartmentId, PrefectId, Reason, 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(prefect_pocrovskoe_streshnegoDataSet.AppointmentsDataTable dataTable) {
+        public virtual int Update(prefect_pocrovskoe_streshnegoEntities.AppointmentsDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(prefect_pocrovskoe_streshnegoDataSet dataSet) {
+        public virtual int Update(prefect_pocrovskoe_streshnegoEntities dataSet) {
             return this.Adapter.Update(dataSet, "Appointments");
         }
         
@@ -4631,7 +4631,7 @@ SELECT CancellationReasonId, Reason FROM CancellationReasons WHERE (Cancellation
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(prefect_pocrovskoe_streshnegoDataSet.CancellationReasonsDataTable dataTable) {
+        public virtual int Fill(prefect_pocrovskoe_streshnegoEntities.CancellationReasonsDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -4644,9 +4644,9 @@ SELECT CancellationReasonId, Reason FROM CancellationReasons WHERE (Cancellation
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual prefect_pocrovskoe_streshnegoDataSet.CancellationReasonsDataTable GetData() {
+        public virtual prefect_pocrovskoe_streshnegoEntities.CancellationReasonsDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            prefect_pocrovskoe_streshnegoDataSet.CancellationReasonsDataTable dataTable = new prefect_pocrovskoe_streshnegoDataSet.CancellationReasonsDataTable();
+            prefect_pocrovskoe_streshnegoEntities.CancellationReasonsDataTable dataTable = new prefect_pocrovskoe_streshnegoEntities.CancellationReasonsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -4654,14 +4654,14 @@ SELECT CancellationReasonId, Reason FROM CancellationReasons WHERE (Cancellation
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(prefect_pocrovskoe_streshnegoDataSet.CancellationReasonsDataTable dataTable) {
+        public virtual int Update(prefect_pocrovskoe_streshnegoEntities.CancellationReasonsDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(prefect_pocrovskoe_streshnegoDataSet dataSet) {
+        public virtual int Update(prefect_pocrovskoe_streshnegoEntities dataSet) {
             return this.Adapter.Update(dataSet, "CancellationReasons");
         }
         
@@ -4958,7 +4958,7 @@ SELECT DepartmentId, DepartmnetName, CreatedAt FROM Departments WHERE (Departmen
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(prefect_pocrovskoe_streshnegoDataSet.DepartmentsDataTable dataTable) {
+        public virtual int Fill(prefect_pocrovskoe_streshnegoEntities.DepartmentsDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -4971,9 +4971,9 @@ SELECT DepartmentId, DepartmnetName, CreatedAt FROM Departments WHERE (Departmen
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual prefect_pocrovskoe_streshnegoDataSet.DepartmentsDataTable GetData() {
+        public virtual prefect_pocrovskoe_streshnegoEntities.DepartmentsDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            prefect_pocrovskoe_streshnegoDataSet.DepartmentsDataTable dataTable = new prefect_pocrovskoe_streshnegoDataSet.DepartmentsDataTable();
+            prefect_pocrovskoe_streshnegoEntities.DepartmentsDataTable dataTable = new prefect_pocrovskoe_streshnegoEntities.DepartmentsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -4981,14 +4981,14 @@ SELECT DepartmentId, DepartmnetName, CreatedAt FROM Departments WHERE (Departmen
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(prefect_pocrovskoe_streshnegoDataSet.DepartmentsDataTable dataTable) {
+        public virtual int Update(prefect_pocrovskoe_streshnegoEntities.DepartmentsDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(prefect_pocrovskoe_streshnegoDataSet dataSet) {
+        public virtual int Update(prefect_pocrovskoe_streshnegoEntities dataSet) {
             return this.Adapter.Update(dataSet, "Departments");
         }
         
@@ -5339,7 +5339,7 @@ SELECT PrefectId, FirstName, SurName, LastName, Phone, Email FROM Prefects WHERE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(prefect_pocrovskoe_streshnegoDataSet.PrefectsDataTable dataTable) {
+        public virtual int Fill(prefect_pocrovskoe_streshnegoEntities.PrefectsDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -5352,9 +5352,9 @@ SELECT PrefectId, FirstName, SurName, LastName, Phone, Email FROM Prefects WHERE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual prefect_pocrovskoe_streshnegoDataSet.PrefectsDataTable GetData() {
+        public virtual prefect_pocrovskoe_streshnegoEntities.PrefectsDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            prefect_pocrovskoe_streshnegoDataSet.PrefectsDataTable dataTable = new prefect_pocrovskoe_streshnegoDataSet.PrefectsDataTable();
+            prefect_pocrovskoe_streshnegoEntities.PrefectsDataTable dataTable = new prefect_pocrovskoe_streshnegoEntities.PrefectsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -5362,14 +5362,14 @@ SELECT PrefectId, FirstName, SurName, LastName, Phone, Email FROM Prefects WHERE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(prefect_pocrovskoe_streshnegoDataSet.PrefectsDataTable dataTable) {
+        public virtual int Update(prefect_pocrovskoe_streshnegoEntities.PrefectsDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(prefect_pocrovskoe_streshnegoDataSet dataSet) {
+        public virtual int Update(prefect_pocrovskoe_streshnegoEntities dataSet) {
             return this.Adapter.Update(dataSet, "Prefects");
         }
         
@@ -5775,7 +5775,7 @@ SELECT PrefectId, FirstName, SurName, LastName, Phone, Email FROM Prefects WHERE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(prefect_pocrovskoe_streshnegoDataSet.RolesDataTable dataTable) {
+        public virtual int Fill(prefect_pocrovskoe_streshnegoEntities.RolesDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -5788,9 +5788,9 @@ SELECT PrefectId, FirstName, SurName, LastName, Phone, Email FROM Prefects WHERE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual prefect_pocrovskoe_streshnegoDataSet.RolesDataTable GetData() {
+        public virtual prefect_pocrovskoe_streshnegoEntities.RolesDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            prefect_pocrovskoe_streshnegoDataSet.RolesDataTable dataTable = new prefect_pocrovskoe_streshnegoDataSet.RolesDataTable();
+            prefect_pocrovskoe_streshnegoEntities.RolesDataTable dataTable = new prefect_pocrovskoe_streshnegoEntities.RolesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -5798,14 +5798,14 @@ SELECT PrefectId, FirstName, SurName, LastName, Phone, Email FROM Prefects WHERE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(prefect_pocrovskoe_streshnegoDataSet.RolesDataTable dataTable) {
+        public virtual int Update(prefect_pocrovskoe_streshnegoEntities.RolesDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(prefect_pocrovskoe_streshnegoDataSet dataSet) {
+        public virtual int Update(prefect_pocrovskoe_streshnegoEntities dataSet) {
             return this.Adapter.Update(dataSet, "Roles");
         }
         
@@ -6097,7 +6097,7 @@ SELECT PrefectId, FirstName, SurName, LastName, Phone, Email FROM Prefects WHERE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(prefect_pocrovskoe_streshnegoDataSet.StatusesDataTable dataTable) {
+        public virtual int Fill(prefect_pocrovskoe_streshnegoEntities.StatusesDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -6110,9 +6110,9 @@ SELECT PrefectId, FirstName, SurName, LastName, Phone, Email FROM Prefects WHERE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual prefect_pocrovskoe_streshnegoDataSet.StatusesDataTable GetData() {
+        public virtual prefect_pocrovskoe_streshnegoEntities.StatusesDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            prefect_pocrovskoe_streshnegoDataSet.StatusesDataTable dataTable = new prefect_pocrovskoe_streshnegoDataSet.StatusesDataTable();
+            prefect_pocrovskoe_streshnegoEntities.StatusesDataTable dataTable = new prefect_pocrovskoe_streshnegoEntities.StatusesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -6120,14 +6120,14 @@ SELECT PrefectId, FirstName, SurName, LastName, Phone, Email FROM Prefects WHERE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(prefect_pocrovskoe_streshnegoDataSet.StatusesDataTable dataTable) {
+        public virtual int Update(prefect_pocrovskoe_streshnegoEntities.StatusesDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(prefect_pocrovskoe_streshnegoDataSet dataSet) {
+        public virtual int Update(prefect_pocrovskoe_streshnegoEntities dataSet) {
             return this.Adapter.Update(dataSet, "Statuses");
         }
         
@@ -6464,7 +6464,7 @@ SELECT Id, FurstName, SurName, LastName, Phone, Login, Password, CreatedAt, Role
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(prefect_pocrovskoe_streshnegoDataSet.UsersDataTable dataTable) {
+        public virtual int Fill(prefect_pocrovskoe_streshnegoEntities.UsersDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -6477,9 +6477,9 @@ SELECT Id, FurstName, SurName, LastName, Phone, Login, Password, CreatedAt, Role
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual prefect_pocrovskoe_streshnegoDataSet.UsersDataTable GetData() {
+        public virtual prefect_pocrovskoe_streshnegoEntities.UsersDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            prefect_pocrovskoe_streshnegoDataSet.UsersDataTable dataTable = new prefect_pocrovskoe_streshnegoDataSet.UsersDataTable();
+            prefect_pocrovskoe_streshnegoEntities.UsersDataTable dataTable = new prefect_pocrovskoe_streshnegoEntities.UsersDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -6487,14 +6487,14 @@ SELECT Id, FurstName, SurName, LastName, Phone, Login, Password, CreatedAt, Role
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(prefect_pocrovskoe_streshnegoDataSet.UsersDataTable dataTable) {
+        public virtual int Update(prefect_pocrovskoe_streshnegoEntities.UsersDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(prefect_pocrovskoe_streshnegoDataSet dataSet) {
+        public virtual int Update(prefect_pocrovskoe_streshnegoEntities dataSet) {
             return this.Adapter.Update(dataSet, "Users");
         }
         
@@ -7092,7 +7092,7 @@ SELECT Id, FurstName, SurName, LastName, Phone, Login, Password, CreatedAt, Role
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateUpdatedRows(prefect_pocrovskoe_streshnegoDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(prefect_pocrovskoe_streshnegoEntities dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._rolesTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Roles.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -7165,7 +7165,7 @@ SELECT Id, FurstName, SurName, LastName, Phone, Login, Password, CreatedAt, Role
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateInsertedRows(prefect_pocrovskoe_streshnegoDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(prefect_pocrovskoe_streshnegoEntities dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._rolesTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Roles.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -7231,7 +7231,7 @@ SELECT Id, FurstName, SurName, LastName, Phone, Login, Password, CreatedAt, Role
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateDeletedRows(prefect_pocrovskoe_streshnegoDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(prefect_pocrovskoe_streshnegoEntities dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._appointmentsTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Appointments.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -7321,7 +7321,7 @@ SELECT Id, FurstName, SurName, LastName, Phone, Login, Password, CreatedAt, Role
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public virtual int UpdateAll(prefect_pocrovskoe_streshnegoDataSet dataSet) {
+        public virtual int UpdateAll(prefect_pocrovskoe_streshnegoEntities dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

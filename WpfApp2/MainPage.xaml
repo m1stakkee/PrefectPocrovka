@@ -6,9 +6,10 @@
       xmlns:local="clr-namespace:WpfApp2"
       mc:Ignorable="d" 
       MinHeight="450"
-      MinWidth="500"
+      MinWidth="450"
       MaxHeight="500"
-      MaxWidth="550"
+      MaxWidth="500"
+      Width="450"
       Title="Запись к префекту">
 
     <Grid 

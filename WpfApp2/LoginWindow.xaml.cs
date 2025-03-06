@@ -21,7 +21,7 @@ namespace WpfApp2
 
         public LoginWindow()
         {
-            InitializeComponent();
+            InitializeComponent();  
         }
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
@@ -33,8 +33,8 @@ namespace WpfApp2
 
                 if (data != null)
                 {
-                    MainWindow mainWindow = new MainWindow();
-                    mainWindow.Show();
+                    AdminWindow  adminWindow = new AdminWindow();
+                    adminWindow.Show();
                     this.Close();
                 }
                 else
@@ -45,7 +45,7 @@ namespace WpfApp2
             }
             catch
             {
-
+                
             }
         }
 

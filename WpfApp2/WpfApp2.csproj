@@ -52,6 +52,14 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>WpfApp2.App</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Dapper.2.1.66\lib\net461\Dapper.dll</HintPath>
@@ -224,10 +232,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\ConnectDb.cs" />
-    <Compile Include="Models\prefect_pocrovskoe_streshnegoDataSet.Designer.cs">
+    <Compile Include="Models\prefect_pocrovskoe_streshnegoEntities.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>prefect_pocrovskoe_streshnegoDataSet.xsd</DependentUpon>
+      <DependentUpon>prefect_pocrovskoe_streshnegoEntities.xsd</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -247,16 +255,16 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
-    <None Include="Models\prefect_pocrovskoe_streshnegoDataSet.xsc">
-      <DependentUpon>prefect_pocrovskoe_streshnegoDataSet.xsd</DependentUpon>
+    <None Include="Models\prefect_pocrovskoe_streshnegoEntities.xsc">
+      <DependentUpon>prefect_pocrovskoe_streshnegoEntities.xsd</DependentUpon>
     </None>
-    <None Include="Models\prefect_pocrovskoe_streshnegoDataSet.xsd">
+    <None Include="Models\prefect_pocrovskoe_streshnegoEntities.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>prefect_pocrovskoe_streshnegoDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>prefect_pocrovskoe_streshnegoEntities.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="Models\prefect_pocrovskoe_streshnegoDataSet.xss">
-      <DependentUpon>prefect_pocrovskoe_streshnegoDataSet.xsd</DependentUpon>
+    <None Include="Models\prefect_pocrovskoe_streshnegoEntities.xss">
+      <DependentUpon>prefect_pocrovskoe_streshnegoEntities.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

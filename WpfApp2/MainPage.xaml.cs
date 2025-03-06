@@ -39,7 +39,7 @@ namespace WpfApp2
 
 
 
-            ResultTextBlock.Text = $"Запись на {appointmentType} успешно создана на {appointmentDate.Value.ToShortDateString()} для {userData}.";
+            ResultTextBlock.Text = $"Запись на {appointmentType} успешно создана на\n{appointmentDate.Value.ToShortDateString()} для {userData}.";
         }
 
 
