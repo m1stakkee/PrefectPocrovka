@@ -3,7 +3,7 @@
   "WorkspaceRootPath": "C:\\Users\\ivank\\source\\repos\\WpfApp2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{833F7657-4ACE-4FB3-BB22-3FEC33832ECD}|WpfApp2\\WpfApp2.csproj|C:\\Users\\ivank\\source\\repos\\WpfApp2\\wpfapp2\\loginwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{833F7657-4ACE-4FB3-BB22-3FEC33832ECD}|WpfApp2\\WpfApp2.csproj|c:\\users\\ivank\\source\\repos\\wpfapp2\\wpfapp2\\loginwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{833F7657-4ACE-4FB3-BB22-3FEC33832ECD}|WpfApp2\\WpfApp2.csproj|solutionrelative:wpfapp2\\loginwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -11,12 +11,8 @@
       "RelativeMoniker": "D:0:0:{833F7657-4ACE-4FB3-BB22-3FEC33832ECD}|WpfApp2\\WpfApp2.csproj|solutionrelative:wpfapp2\\loginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{833F7657-4ACE-4FB3-BB22-3FEC33832ECD}|WpfApp2\\WpfApp2.csproj|c:\\users\\ivank\\source\\repos\\wpfapp2\\wpfapp2\\models\\connectdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{833F7657-4ACE-4FB3-BB22-3FEC33832ECD}|WpfApp2\\WpfApp2.csproj|solutionrelative:wpfapp2\\models\\connectdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{833F7657-4ACE-4FB3-BB22-3FEC33832ECD}|WpfApp2\\WpfApp2.csproj|C:\\Users\\ivank\\source\\repos\\WpfApp2\\wpfapp2\\adminwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{833F7657-4ACE-4FB3-BB22-3FEC33832ECD}|WpfApp2\\WpfApp2.csproj|solutionrelative:wpfapp2\\adminwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{833F7657-4ACE-4FB3-BB22-3FEC33832ECD}|WpfApp2\\WpfApp2.csproj|C:\\Users\\ivank\\source\\repos\\WpfApp2\\wpfapp2\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{833F7657-4ACE-4FB3-BB22-3FEC33832ECD}|WpfApp2\\WpfApp2.csproj|solutionrelative:wpfapp2\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{833F7657-4ACE-4FB3-BB22-3FEC33832ECD}|WpfApp2\\WpfApp2.csproj|C:\\Users\\ivank\\source\\repos\\WpfApp2\\wpfapp2\\adminwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -31,12 +27,16 @@
       "RelativeMoniker": "D:0:0:{833F7657-4ACE-4FB3-BB22-3FEC33832ECD}|WpfApp2\\WpfApp2.csproj|solutionrelative:wpfapp2\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{833F7657-4ACE-4FB3-BB22-3FEC33832ECD}|WpfApp2\\WpfApp2.csproj|C:\\Users\\ivank\\source\\repos\\WpfApp2\\wpfapp2\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{833F7657-4ACE-4FB3-BB22-3FEC33832ECD}|WpfApp2\\WpfApp2.csproj|solutionrelative:wpfapp2\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{833F7657-4ACE-4FB3-BB22-3FEC33832ECD}|WpfApp2\\WpfApp2.csproj|C:\\Users\\ivank\\source\\repos\\WpfApp2\\wpfapp2\\adminwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{833F7657-4ACE-4FB3-BB22-3FEC33832ECD}|WpfApp2\\WpfApp2.csproj|solutionrelative:wpfapp2\\adminwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{833F7657-4ACE-4FB3-BB22-3FEC33832ECD}|WpfApp2\\WpfApp2.csproj|C:\\Users\\ivank\\source\\repos\\WpfApp2\\wpfapp2\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{833F7657-4ACE-4FB3-BB22-3FEC33832ECD}|WpfApp2\\WpfApp2.csproj|solutionrelative:wpfapp2\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{833F7657-4ACE-4FB3-BB22-3FEC33832ECD}|WpfApp2\\WpfApp2.csproj|C:\\Users\\ivank\\source\\repos\\WpfApp2\\wpfapp2\\models\\connectdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{833F7657-4ACE-4FB3-BB22-3FEC33832ECD}|WpfApp2\\WpfApp2.csproj|solutionrelative:wpfapp2\\models\\connectdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{833F7657-4ACE-4FB3-BB22-3FEC33832ECD}|WpfApp2\\WpfApp2.csproj|C:\\Users\\ivank\\source\\repos\\WpfApp2\\wpfapp2\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{833F7657-4ACE-4FB3-BB22-3FEC33832ECD}|WpfApp2\\WpfApp2.csproj|solutionrelative:wpfapp2\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 463,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -58,56 +58,54 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ConnectDb.cs",
-              "DocumentMoniker": "C:\\Users\\ivank\\source\\repos\\WpfApp2\\WpfApp2\\Models\\ConnectDb.cs",
-              "RelativeDocumentMoniker": "WpfApp2\\Models\\ConnectDb.cs",
-              "ToolTip": "C:\\Users\\ivank\\source\\repos\\WpfApp2\\WpfApp2\\Models\\ConnectDb.cs",
-              "RelativeToolTip": "WpfApp2\\Models\\ConnectDb.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-03T09:45:12.461Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "LoginWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\ivank\\source\\repos\\WpfApp2\\WpfApp2\\LoginWindow.xaml.cs",
               "RelativeDocumentMoniker": "WpfApp2\\LoginWindow.xaml.cs",
               "ToolTip": "C:\\Users\\ivank\\source\\repos\\WpfApp2\\WpfApp2\\LoginWindow.xaml.cs",
               "RelativeToolTip": "WpfApp2\\LoginWindow.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAABBAAAAAAAAAA==",
+              "ViewState": "AgIAACEAAAAAAAAAAAAYwEIAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-02T21:08:43.166Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AdminWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\ivank\\source\\repos\\WpfApp2\\WpfApp2\\AdminWindow.xaml",
-              "RelativeDocumentMoniker": "WpfApp2\\AdminWindow.xaml",
-              "ToolTip": "C:\\Users\\ivank\\source\\repos\\WpfApp2\\WpfApp2\\AdminWindow.xaml",
-              "RelativeToolTip": "WpfApp2\\AdminWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-03-02T21:28:14.371Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "MainPage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\ivank\\source\\repos\\WpfApp2\\WpfApp2\\MainPage.xaml.cs",
               "RelativeDocumentMoniker": "WpfApp2\\MainPage.xaml.cs",
               "ToolTip": "C:\\Users\\ivank\\source\\repos\\WpfApp2\\WpfApp2\\MainPage.xaml.cs",
               "RelativeToolTip": "WpfApp2\\MainPage.xaml.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAqwCEAAABKAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-02T21:13:59.887Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
+              "Title": "LoginWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\ivank\\source\\repos\\WpfApp2\\WpfApp2\\LoginWindow.xaml",
+              "RelativeDocumentMoniker": "WpfApp2\\LoginWindow.xaml",
+              "ToolTip": "C:\\Users\\ivank\\source\\repos\\WpfApp2\\WpfApp2\\LoginWindow.xaml",
+              "RelativeToolTip": "WpfApp2\\LoginWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-03-02T20:57:44.97Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\ivank\\source\\repos\\WpfApp2\\WpfApp2\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "WpfApp2\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\ivank\\source\\repos\\WpfApp2\\WpfApp2\\MainWindow.xaml",
+              "RelativeToolTip": "WpfApp2\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-02-23T20:25:35.088Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "AdminWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\ivank\\source\\repos\\WpfApp2\\WpfApp2\\AdminWindow.xaml.cs",
               "RelativeDocumentMoniker": "WpfApp2\\AdminWindow.xaml.cs",
@@ -119,30 +117,42 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "LoginWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\ivank\\source\\repos\\WpfApp2\\WpfApp2\\LoginWindow.xaml",
-              "RelativeDocumentMoniker": "WpfApp2\\LoginWindow.xaml",
-              "ToolTip": "C:\\Users\\ivank\\source\\repos\\WpfApp2\\WpfApp2\\LoginWindow.xaml",
-              "RelativeToolTip": "WpfApp2\\LoginWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-03-02T20:57:44.97Z",
-              "EditorCaption": ""
+              "DocumentIndex": 2,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\ivank\\source\\repos\\WpfApp2\\WpfApp2\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "WpfApp2\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\ivank\\source\\repos\\WpfApp2\\WpfApp2\\MainWindow.xaml.cs",
+              "RelativeToolTip": "WpfApp2\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAuwB8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-23T20:25:36.457Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\ivank\\source\\repos\\WpfApp2\\WpfApp2\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "WpfApp2\\MainWindow.xaml",
-              "ToolTip": "C:\\Users\\ivank\\source\\repos\\WpfApp2\\WpfApp2\\MainWindow.xaml",
-              "RelativeToolTip": "WpfApp2\\MainWindow.xaml",
+              "Title": "AdminWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\ivank\\source\\repos\\WpfApp2\\WpfApp2\\AdminWindow.xaml",
+              "RelativeDocumentMoniker": "WpfApp2\\AdminWindow.xaml",
+              "ToolTip": "C:\\Users\\ivank\\source\\repos\\WpfApp2\\WpfApp2\\AdminWindow.xaml",
+              "RelativeToolTip": "WpfApp2\\AdminWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-02-23T20:25:35.088Z"
+              "WhenOpened": "2025-03-02T21:28:14.371Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
+              "Title": "ConnectDb.cs",
+              "DocumentMoniker": "C:\\Users\\ivank\\source\\repos\\WpfApp2\\WpfApp2\\Models\\ConnectDb.cs",
+              "RelativeDocumentMoniker": "WpfApp2\\Models\\ConnectDb.cs",
+              "ToolTip": "C:\\Users\\ivank\\source\\repos\\WpfApp2\\WpfApp2\\Models\\ConnectDb.cs",
+              "RelativeToolTip": "WpfApp2\\Models\\ConnectDb.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-03T09:45:12.461Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "MainPage.xaml",
               "DocumentMoniker": "C:\\Users\\ivank\\source\\repos\\WpfApp2\\WpfApp2\\MainPage.xaml",
               "RelativeDocumentMoniker": "WpfApp2\\MainPage.xaml",
@@ -150,18 +160,6 @@
               "RelativeToolTip": "WpfApp2\\MainPage.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-03-02T21:12:55.304Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\ivank\\source\\repos\\WpfApp2\\WpfApp2\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "WpfApp2\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\ivank\\source\\repos\\WpfApp2\\WpfApp2\\MainWindow.xaml.cs",
-              "RelativeToolTip": "WpfApp2\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAwwBsAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-23T20:25:36.457Z"
             }
           ]
         }

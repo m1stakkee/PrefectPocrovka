@@ -29,7 +29,7 @@ namespace WpfApp2
         {
             var appointmentType = (AppointmentTypeComboBox.SelectedItem as ComboBoxItem)?.Content.ToString();
             var appointmentDate = AppointmentDatePicker.SelectedDate;
-            var userData = UserDataTextBox.Text;
+            var userData = UserDataTextBox.Text;    
 
             if (appointmentDate == null || string.IsNullOrEmpty(userData))
             {
