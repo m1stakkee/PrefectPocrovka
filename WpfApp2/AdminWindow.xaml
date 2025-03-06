@@ -6,11 +6,11 @@
         xmlns:local="clr-namespace:WpfApp2"
         mc:Ignorable="d"
         Title="AdminWindow" 
-        MinHeight="550" 
+        MinHeight="570" 
         MinWidth="750"
-        MaxHeight="600"
+        MaxHeight="620"
         MaxWidth="800"
-        Height="550"
+        Height="570"
         Width="770"
         >
     <Grid>
@@ -22,9 +22,10 @@
                 x:Name="AdminWin" 
                 AutoGenerateColumns="False" 
                 Margin="0,0,0,-80" 
-                SelectionChanged="dataGrid_SelectionChanged"
+                
                 HorizontalAlignment="Left"
-                VerticalAlignment="Top">
+                VerticalAlignment="Top"
+                >
 
                 
                 <DataGrid.Columns>
@@ -55,7 +56,12 @@
                         Width="*"/>
                     <DataGridTextColumn
                         Header="Role"
-                        Binding="{Binding Name}"
+                        Binding="{Binding RoleName}"
+                        Width="*"/>
+
+                    <DataGridTextColumn
+                        Header="RoleId"
+                        Binding="{Binding RoleId}"
                         Width="*"/>
 
 
@@ -152,10 +158,16 @@
                             >
 
             <Button
-                
                 x:Name="BtnAdd"
                 Content="Добавить"
-                Click="BtnAdd_Click" 
+                Click="BtnAdd_Click"
+                Height="30"/>
+
+            <Button
+                
+                x:Name="BtnEdit"
+                Content="Изменить"
+                Click="BtnEdit_Click"
                 Height="30"
                             />
             <Button
@@ -164,6 +176,8 @@
                 Click="BtnDelete_Click"
                 Height="30"
                             />
+
+            
         </StackPanel>
     </Grid>
 </Window>
