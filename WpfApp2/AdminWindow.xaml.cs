@@ -37,15 +37,27 @@ namespace WpfApp2
         {
             
             InitializeComponent();
-            LoadData(); 
-            DataContext = this;
-            
+            LoadDataUsers();
+
+
+            _sqlConnection = new SqlConnection(_connectionString);
+            _sqlConnection.Open();
+
+            List<Roles> roles = new List<Roles>();
+            string query = "SELECT Roleid, Name FROM Roles";
+            _dataAdapter = new SqlDataAdapter(query, _sqlConnection);
+            _dataTable = new DataTable();
+            _dataAdapter.Fill(roles);
+
+            CmbRole.ItemsSource = roles;
+
+            Console.WriteLine(CmbRole.Items);
             
         }
 
-      
 
-        private void LoadData()
+
+        private void LoadDataUsers()
         {
             
             try
@@ -53,7 +65,7 @@ namespace WpfApp2
                 _sqlConnection = new SqlConnection(_connectionString);
                 _sqlConnection.Open();
 
-                string query = "SELECT * FROM Users"; 
+                string query = "SELECT FurstName, SurName, LastName, Phone, Login, Password, RoleId FRON Users"; 
                 _dataAdapter = new SqlDataAdapter(query, _sqlConnection);
                 _dataTable = new DataTable();
                 _dataAdapter.Fill(_dataTable);
@@ -101,7 +113,7 @@ namespace WpfApp2
 
                
                 _dataTable.RejectChanges();
-                LoadData();
+                LoadDataUsers();
             }
             catch (Exception ex)
             {
@@ -137,7 +149,7 @@ namespace WpfApp2
 
                         
                         _dataTable.RejectChanges();
-                        LoadData();
+                        LoadDataUsers();
                     }
                     catch (Exception ex)
                     {

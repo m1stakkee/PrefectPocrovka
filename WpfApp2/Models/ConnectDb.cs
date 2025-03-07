@@ -9,7 +9,7 @@ namespace WpfApp2.Models
 {
     public class ConnectDb
     {
-        public static prefect_pocrovskoe_streshnegoEntities Connect {  get; set; } = new prefect_pocrovskoe_streshnegoEntities();
+        public static prefect_pocrovskoe_streshnegoEntities Connect {  get; } = new prefect_pocrovskoe_streshnegoEntities();
 
         
     }
