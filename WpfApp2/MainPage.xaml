@@ -24,7 +24,8 @@
             x:Name="AppointmentTypeComboBox" 
             HorizontalAlignment="Center" 
             VerticalAlignment="Top" 
-            Margin="0,30,0,0">
+            Margin="0,30,0,0"
+            Width="100">
             <ComboBoxItem 
                 Content="Личный прием" />
             <ComboBoxItem 

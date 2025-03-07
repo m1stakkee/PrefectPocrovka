@@ -22,9 +22,7 @@ using WpfApp2.Models;
 
 namespace WpfApp2
 {
-    /// <summary>
-    /// Логика взаимодействия для AdminWindow.xaml
-    /// </summary>
+    
     public partial class AdminWindow : Window
     {
         
@@ -33,19 +31,21 @@ namespace WpfApp2
         private SqlConnection _sqlConnection;
         private string _connectionString = @"Data Source=IVAN\SQLEXPRESS;Initial Catalog=prefect_pocrovskoe_streshnego;Integrated Security=True;Encrypt=False"; //Строка подключения
 
-        public object DgUsers { get; private set; }
+        
 
         public AdminWindow()
         {
             
             InitializeComponent();
-            LoadDataUsers(); 
+            LoadData(); 
             DataContext = this;
+            
             
         }
 
+      
 
-        private void LoadDataUsers()
+        private void LoadData()
         {
             
             try
@@ -58,7 +58,10 @@ namespace WpfApp2
                 _dataTable = new DataTable();
                 _dataAdapter.Fill(_dataTable);
 
+
                 
+
+
                 AdminWin.ItemsSource = _dataTable.DefaultView;
 
                 
@@ -98,7 +101,7 @@ namespace WpfApp2
 
                
                 _dataTable.RejectChanges();
-                LoadDataUsers();
+                LoadData();
             }
             catch (Exception ex)
             {
@@ -134,7 +137,7 @@ namespace WpfApp2
 
                         
                         _dataTable.RejectChanges();
-                        LoadDataUsers();
+                        LoadData();
                     }
                     catch (Exception ex)
                     {
@@ -166,6 +169,7 @@ namespace WpfApp2
                 string.IsNullOrWhiteSpace(TxbPhone.Text) ||
                 string.IsNullOrWhiteSpace(PsbPassword.Password) ||
                 string.IsNullOrWhiteSpace(PsbPasswordRepeat.Password))
+                
             {
                 MessageBox.Show("Все поля должны быть заполнены.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
@@ -220,12 +224,7 @@ namespace WpfApp2
                     MessageBox.Show("Нет изменений для сохранения.", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
             }
-            catch (DBConcurrencyException ex)
-            {
-                MessageBox.Show("Конфликт параллелизма. Данные были изменены другим пользователем.\n" + ex.Message, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-                _dataTable.RejectChanges();
-                LoadDataUsers();
-            }
+            
             catch (Exception ex)
             {
                 MessageBox.Show("Ошибка при сохранении изменений: " + ex.Message, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);

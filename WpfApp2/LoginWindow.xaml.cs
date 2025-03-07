@@ -91,14 +91,11 @@ namespace WpfApp2
                                     MessageBox.Show($"Здравствуйте, {FurstName}!\nВы вошли как {roleText}.", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
 
                                 }
-                                else
-                                {
-                                    MessageBox.Show("Неправильный логин или пароль!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
-                                }
+                                
                             }
                             else
                             {
-                                MessageBox.Show("Неправильный логин или пароль!!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
+                                MessageBox.Show("Неправильный логин или пароль!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
                             }
                         }
                     }

@@ -33,7 +33,8 @@
                     <DataGridTextColumn 
                         Header="ID" 
                         Binding="{Binding Id}" 
-                        Width="1"/>
+                        IsReadOnly="True"
+                        Width="Auto"/>
                     <DataGridTextColumn 
                         Header="Login" 
                         Binding="{Binding Login}" 
@@ -56,7 +57,7 @@
                         Width="*"/>
                     <DataGridTextColumn
                         Header="Role"
-                        Binding="{Binding RoleName}"
+                        Binding="{Binding Roles.Name}"
                         Width="*"/>
 
                     
@@ -116,10 +117,10 @@
 
             <GroupBox 
             Header="Role">
-                <ComboBox 
+                <ComboBox
             Name="CmbRole"
             Margin="0 10 0 0 "
-            DisplayMemberPath="RoleName"
+            DisplayMemberPath="Name"
             SelectedValuePath="Roleid"
             
              />

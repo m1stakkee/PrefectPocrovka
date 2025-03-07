@@ -7,7 +7,7 @@ using WpfApp2.Models.prefect_pocrovskoe_streshnegoEntitiesTableAdapters;
 
 namespace WpfApp2.Models
 {
-    internal class Users
+    public class Users
     {
         public int Id { get; set; }
         public string FirstName { get; set; }

@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace WpfApp2.Models
 {
-    internal class Roles
+    public class Roles
     {
-        public int RoleId { get; set; }
+        public int Roleid { get; set; }
         public string Name { get; set; }
-        public virtual ICollection<Users> Users { get; set; }
+        public virtual ICollection<Users> Users { get; set; } = new List<Users>();
     }
 }
