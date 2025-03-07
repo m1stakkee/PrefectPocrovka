@@ -35,14 +35,7 @@
                         Binding="{Binding Id}" 
                         IsReadOnly="True"
                         Width="Auto"/>
-                    <DataGridTextColumn 
-                        Header="Login" 
-                        Binding="{Binding Login}" 
-                        Width="*"/>
-                    <DataGridTextColumn
-                        Header="Phone" 
-                        Binding="{Binding Phone}" 
-                        Width="*"/>
+                    
                     <DataGridTextColumn
                         Header="FurstName"
                         Binding="{Binding FurstName}"
@@ -54,6 +47,14 @@
                     <DataGridTextColumn
                         Header="LastName"
                         Binding="{Binding LastName}"
+                        Width="*"/>
+                    <DataGridTextColumn 
+                        Header="Login" 
+                        Binding="{Binding Login}" 
+                        Width="*"/>
+                    <DataGridTextColumn
+                        Header="Phone" 
+                        Binding="{Binding Phone}" 
                         Width="*"/>
                     <DataGridTextColumn
                         Header="Role"
