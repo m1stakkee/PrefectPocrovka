@@ -25,229 +25,91 @@ namespace WpfApp2
     
     public partial class AdminWindow : Window
     {
-        
-        private SqlDataAdapter _dataAdapter;
-        private DataTable _dataTable;
-        private SqlConnection _sqlConnection;
-        private string _connectionString = @"Data Source=IVAN\SQLEXPRESS;Initial Catalog=prefect_pocrovskoe_streshnego;Integrated Security=True;Encrypt=False"; //Строка подключения
 
-        
+
+
+        private string _FurstName;
+        private string _SurName;
+        private string _LastName;
+        private string _Phone;
+        private string _Password;
+        private string _RepeatPassword;
+        private int _Roleid = 2;
+
 
         public AdminWindow()
         {
-            
             InitializeComponent();
             LoadDataUsers();
 
-
-            _sqlConnection = new SqlConnection(_connectionString);
-            _sqlConnection.Open();
-
-            List<Roles> roles = new List<Roles>();
-            string query = "SELECT Roleid, Name FROM Roles";
-            _dataAdapter = new SqlDataAdapter(query, _sqlConnection);
-            _dataTable = new DataTable();
-            _dataAdapter.Fill(roles);
-
-            CmbRole.ItemsSource = roles;
-
-            Console.WriteLine(CmbRole.Items);
-            
+            CmbRole.ItemsSource = ConnectDb.Connect.Roles.ToList();
         }
-
-
 
         private void LoadDataUsers()
         {
             
-            try
-            {
-                _sqlConnection = new SqlConnection(_connectionString);
-                _sqlConnection.Open();
-
-                string query = "SELECT FurstName, SurName, LastName, Phone, Login, Password, RoleId FRON Users"; 
-                _dataAdapter = new SqlDataAdapter(query, _sqlConnection);
-                _dataTable = new DataTable();
-                _dataAdapter.Fill(_dataTable);
-
-
-                
-
-
-                AdminWin.ItemsSource = _dataTable.DefaultView;
-
-                
-                SqlCommandBuilder commandBuilder = new SqlCommandBuilder(_dataAdapter);
-                _dataAdapter.InsertCommand = commandBuilder.GetInsertCommand();
-                _dataAdapter.UpdateCommand = commandBuilder.GetUpdateCommand();
-                _dataAdapter.DeleteCommand = commandBuilder.GetDeleteCommand();
-
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Ошибка при загрузке данных: " + ex.Message, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-        }
-
-      
-        private void BtnEdit_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                if (_dataTable.GetChanges() != null) 
-                {
-                    _dataAdapter.Update(_dataTable);
-                    _dataTable.AcceptChanges(); 
-                    MessageBox.Show("Изменения сохранены!", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
-
-                }
-                else
-                {
-                    MessageBox.Show("Нет изменений для сохранения.", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
-                }
-            }
-            catch (DBConcurrencyException ex) 
-            {
-                MessageBox.Show("Конфликт параллелизма. Данные были изменены другим пользователем.\n" + ex.Message, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-
-               
-                _dataTable.RejectChanges();
-                LoadDataUsers();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Ошибка при сохранении изменений: " + ex.Message, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-        }
-
-
-        
-        private void BtnDelete_Click(object sender, RoutedEventArgs e)
-        {
-
-            if (AdminWin.SelectedItem != null) 
-            {
-                
-                DataRowView selectedRow = (DataRowView)AdminWin.SelectedItem;
-                
-                MessageBoxResult result = MessageBox.Show("Вы уверены, что хотите удалить выбранную запись?", "Подтверждение удаления", MessageBoxButton.YesNo, MessageBoxImage.Warning);
-
-                if (result == MessageBoxResult.Yes)
-                {
-                    try
-                    {
-
-                        selectedRow.Delete(); 
-                        _dataAdapter.Update(_dataTable);      
-                        MessageBox.Show("Запись удалена.", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
-
-                    }
-                    catch (DBConcurrencyException ex) 
-                    {
-                        MessageBox.Show("Конфликт параллелизма. Данные были изменены другим пользователем.\n" + ex.Message, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-
-                        
-                        _dataTable.RejectChanges();
-                        LoadDataUsers();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Ошибка при удалении записи: " + ex.Message, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-                    }
-                }
-            }
-            else
-            {
-                MessageBox.Show("Пожалуйста, выберите строку для удаления.", "Предупреждение", MessageBoxButton.OK, MessageBoxImage.Warning);
-            }
-        }
-
-        
-        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            if (_sqlConnection != null && _sqlConnection.State == ConnectionState.Open)
-            {
-                _sqlConnection.Close();
-            }
         }
 
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(TxbFurstName.Text) ||
-                string.IsNullOrWhiteSpace(TxbSurName.Text) ||
-                string.IsNullOrWhiteSpace(TxbLastName.Text) ||
-                string.IsNullOrWhiteSpace(TxbLogin.Text) ||
-                string.IsNullOrWhiteSpace(TxbPhone.Text) ||
-                string.IsNullOrWhiteSpace(PsbPassword.Password) ||
-                string.IsNullOrWhiteSpace(PsbPasswordRepeat.Password))
-                
-            {
-                MessageBox.Show("Все поля должны быть заполнены.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
-            }
-
-            if (PsbPassword.Password != PsbPasswordRepeat.Password)
-            {
-                MessageBox.Show("Пароли не совпадают.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
-            }
-
-            DataRow newRow = _dataTable.NewRow();
-            newRow["FurstName"] = TxbFurstName.Text;
-            newRow["SurName"] = TxbSurName.Text;
-            newRow["LastName"] = TxbLastName.Text;
-            newRow["Login"] = TxbLogin.Text;
-            newRow["Phone"] = TxbPhone.Text;
-            newRow["Password"] = PsbPassword.Password;
-            
-
-            _dataTable.Rows.Add(newRow);
-
-            TxbFurstName.Clear();
-            TxbSurName.Clear();
-            TxbLastName.Clear();
-            TxbLogin.Clear();
-            TxbPhone.Clear();
-            PsbPassword.Clear();
-            PsbPasswordRepeat.Clear();
-
-            SaveChanges();
-
-            
-
-        }
-        private void SaveChanges()
-        {
             try
             {
-                if (_dataTable.GetChanges() != null)
+                _FurstName = TxbFurstName.Text;
+                _SurName = TxbSurName.Text;
+                _LastName = TxbLastName.Text;
+                _Phone = TxbPhone.Text;
+                _Password = PsbPassword.Password;
+                _RepeatPassword = PsbPasswordRepeat.Password;
+                _Roleid = Convert.ToInt32(CmbRole.SelectedValue);
+
+                // ПРоверка данных на null и пустую строку
+                bool result = CheckData(_FurstName, _SurName, _LastName, _Phone, _Password, _Roleid);
+                // Если результат false ничего не происходит
+                if (result == false)
                 {
-                    SqlCommandBuilder commandBuilder = new SqlCommandBuilder(_dataAdapter); 
-                    _dataAdapter.InsertCommand = commandBuilder.GetInsertCommand();  
-                    _dataAdapter.UpdateCommand = commandBuilder.GetUpdateCommand();
-                    _dataAdapter.DeleteCommand = commandBuilder.GetDeleteCommand();
-                    _dataAdapter.Update(_dataTable);
-                    _dataTable.AcceptChanges();
-                    MessageBox.Show("Изменения сохранены!", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
+                    return;
                 }
-                else
+                // Создаем объект user
+                Models.Users user = new Models.Users()
                 {
-                    MessageBox.Show("Нет изменений для сохранения.", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
-                }
+                    FurstName = _FurstName,
+                    SurName = _SurName,
+                    LastName = _LastName,
+                    Phone = _Phone,
+                    Password = _Password,
+                    RoleId = _Roleid
+                };
+
+                // Добавляем в таблицу Users объект пользователя 
+                ConnectDb.Connect.Users.Add(user);
+                // Сохраняем объект в базе данных
+                ConnectDb.Connect.SaveChanges();
+
+                MessageBox.Show("Запись создана успешно", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
+
+
+                // Обновляем таблицу с пользователями
+                LoadDataUsers();
             }
-            
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show("Ошибка при сохранении изменений: " + ex.Message, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Ошибка при добавлении данных", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+
+
+
         }
 
+        private void BtnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Я кнопка удаления");
+        }
 
-
-
+        private bool CheckData(string _FurstName, string _SurName, string _LastName, string _Phone, string _Password, int _Roleid)
+        {
+            
+            MessageBox.Show("Отстутствует значение в таблице имя пользователя");
+            return false;
+        }
     }
-
-   
 }
-

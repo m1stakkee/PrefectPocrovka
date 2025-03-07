@@ -162,13 +162,7 @@
                 Click="BtnAdd_Click"
                 Height="30"/>
 
-            <Button
-                
-                x:Name="BtnEdit"
-                Content="Изменить"
-                Click="BtnEdit_Click"
-                Height="30"
-                            />
+            
             <Button
                 x:Name="BtnDelete"
                 Content="Удалить"
